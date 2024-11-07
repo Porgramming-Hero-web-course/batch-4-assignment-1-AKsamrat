@@ -57,3 +57,35 @@ displayFruits(display);
 ```
 
 Output: Displaying apple Displaying orange Displaying banana
+
+# Async/Await
+
+Async/Await makes it easier to write promises. The keyword 'async' before a
+function makes the function return a promise, always. And the keyword ‘await’ is
+used inside async functions, which makes the program wait until the Promise
+resolves.
+
+```tsx
+const fruits = ['apple', 'orange', 'banana'];
+const displayFruits = (fruit, disaplay) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      disaplay(fruit);
+      res(true);
+    }, 1000);
+  });
+};
+const displayAllFruits = async display => {
+  displayFruits(fruits[0], display);
+  await displayFruits(fruits[0], display);
+  await displayFruits(fruits[1], display);
+};
+
+const display = fruits => {
+  console.log('Displaying', fruits);
+};
+
+displayFruits(display);
+```
+
+Output: Displaying apple Displaying orange Displaying banana
