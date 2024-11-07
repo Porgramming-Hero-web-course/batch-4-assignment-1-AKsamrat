@@ -34,11 +34,11 @@ behaves very much similar to real life promises.
 
 ```tsx
 const fruits = ['apple', 'orange', 'banana'];
-const displayFruits = (fruit, disaplay) => {
+const displayFruits = (fruit, display) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      disaplay(fruit);
-      res(true);
+      display(fruit);
+      resolve(true);
     }, 1000);
   });
 };
@@ -49,11 +49,11 @@ const displayAllFruits = display => {
     .catch(err => console.log(err));
 };
 
-const display = fruits => {
-  console.log('Displaying', fruits);
+const display = fruit => {
+  console.log('Displaying', fruit);
 };
 
-displayFruits(display);
+displayAllFruits(display);
 ```
 
 Output: Displaying apple Displaying orange Displaying banana
@@ -67,25 +67,25 @@ resolves.
 
 ```tsx
 const fruits = ['apple', 'orange', 'banana'];
-const displayFruits = (fruit, disaplay) => {
+const displayFruits = (fruit, display) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      disaplay(fruit);
-      res(true);
+      display(fruit);
+      resolve(true);
     }, 1000);
   });
 };
 const displayAllFruits = async display => {
-  displayFruits(fruits[0], display);
   await displayFruits(fruits[0], display);
   await displayFruits(fruits[1], display);
+  await displayFruits(fruits[2], display);
 };
 
-const display = fruits => {
-  console.log('Displaying', fruits);
+const display = fruit => {
+  console.log('Displaying', fruit);
 };
 
-displayFruits(display);
+displayAllFruits(display);
 ```
 
 Output: Displaying apple Displaying orange Displaying banana
