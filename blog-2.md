@@ -56,7 +56,7 @@ const display = fruit => {
 displayAllFruits(display);
 ```
 
-Output: Displaying apple Displaying orange Displaying banana
+Output: Displaying apple // Displaying orange // Displaying banana//
 
 # Async/Await
 
