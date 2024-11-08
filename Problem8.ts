@@ -12,7 +12,7 @@
     // if (haskey) return true;
     // else return false;
   }
-  const person = { name: 'Alice', age: 25, email: 'alice@example.com' };
-  console.log(validateKeys(person, ['name', 'email']));
+  // const person = { name: 'Alice', age: 25, email: 'alice@example.com' };
+  // console.log(validateKeys(person, ['name', 'email']));
   //
 }
